@@ -83,6 +83,44 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_tagging" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for tag_id -->
+      <div class="form-group">
+        <label for="tag_id" class="control-label">
+          Tag
+        </label>
+
+        <%= select_tag(:tag_id, options_from_collection_for_select(Tag.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for data_card_id -->
+      <div class="form-group">
+        <label for="data_card_id" class="control-label">
+          Data card
+        </label>
+
+        <%= select_tag(:data_card_id, options_from_collection_for_select(DataCard.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Tagging
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -114,6 +152,44 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_comment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for data_card_id -->
+      <div class="form-group">
+        <label for="data_card_id" class="control-label">
+          Data card
+        </label>
+
+        <%= select_tag(:data_card_id, options_from_collection_for_select(DataCard.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Comment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -145,6 +221,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_channel_association" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for data_card_id -->
+      <div class="form-group">
+        <label for="data_card_id" class="control-label">
+          Data card
+        </label>
+
+        <%= select_tag(:data_card_id, options_from_collection_for_select(DataCard.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for channel_id -->
+      <div class="form-group">
+        <label for="channel_id" class="control-label">
+          Channel
+        </label>
+
+        <%= select_tag(:channel_id, options_from_collection_for_select(Channel.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Channel Association
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -176,6 +281,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_selection" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for select_id -->
+      <div class="form-group">
+        <label for="select_id" class="control-label">
+          Select
+        </label>
+
+        <%= select_tag(:select_id, options_from_collection_for_select(Select.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for data_card_id -->
+      <div class="form-group">
+        <label for="data_card_id" class="control-label">
+          Data card
+        </label>
+
+        <%= select_tag(:data_card_id, options_from_collection_for_select(DataCard.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Selection
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

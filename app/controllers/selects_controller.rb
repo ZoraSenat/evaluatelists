@@ -6,6 +6,7 @@ class SelectsController < ApplicationController
   end
 
   def show
+    @selection = Selection.new
     @select = Select.find(params[:id])
 
     render("selects/show.html.erb")

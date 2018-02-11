@@ -16,6 +16,10 @@ class DataCardsController < ApplicationController
   end
 
   def show
+    @selection = Selection.new
+    @channel_association = ChannelAssociation.new
+    @comment = Comment.new
+    @tagging = Tagging.new
     @data_card = DataCard.find(params[:id])
 
     render("data_cards/show.html.erb")

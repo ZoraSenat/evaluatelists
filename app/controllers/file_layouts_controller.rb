@@ -6,6 +6,7 @@ class FileLayoutsController < ApplicationController
   end
 
   def show
+    @data_card = DataCard.new
     @file_layout = FileLayout.find(params[:id])
 
     render("file_layouts/show.html.erb")

@@ -6,6 +6,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
+    @channel_association = ChannelAssociation.new
     @channel = Channel.find(params[:id])
 
     render("channels/show.html.erb")
