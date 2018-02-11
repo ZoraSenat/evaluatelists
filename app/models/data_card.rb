@@ -1,4 +1,6 @@
 class DataCard < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   # Direct associations
 
   belongs_to :file_layout,
