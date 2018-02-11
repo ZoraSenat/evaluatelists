@@ -1,4 +1,14 @@
 class RfqsController < ApplicationController
+  before_action :current_user_must_be_rfq_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_rfq_user
+    rfq = Rfq.find(params[:id])
+
+    unless current_user == rfq.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @rfqs = Rfq.all
 

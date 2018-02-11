@@ -20,8 +20,11 @@
         <td><%= rfq.data_card_id %></td>
         <td>
           <a href="/rfqs/<%= rfq.id %>" class="btn btn-primary">Show</a>
-          <a href="/rfqs/<%= rfq.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_rfq/<%= rfq.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == rfq.user %>
+            <a href="/rfqs/<%= rfq.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_rfq/<%= rfq.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
