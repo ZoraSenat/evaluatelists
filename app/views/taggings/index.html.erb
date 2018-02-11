@@ -18,7 +18,7 @@
       <% @taggings.each do |tagging| %>
       <tr>
         <td><%= tagging.tag.name %></td>
-        <td><%= tagging.data_card_id %></td>
+        <td><%= tagging.data_card.title %></td>
         <td><%= tagging.user_id %></td>
         <td>
           <a href="/taggings/<%= tagging.id %>" class="btn btn-primary">Show</a>
