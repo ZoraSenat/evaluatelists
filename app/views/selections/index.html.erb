@@ -17,7 +17,7 @@
       <% @selections.each do |selection| %>
       <tr>
         <td><%= selection.select.name %></td>
-        <td><%= selection.data_card_id %></td>
+        <td><%= selection.data_card.title %></td>
         <td>
           <a href="/selections/<%= selection.id %>" class="btn btn-primary">Show</a>
           <a href="/selections/<%= selection.id %>/edit" class="btn btn-warning">Edit</a>
