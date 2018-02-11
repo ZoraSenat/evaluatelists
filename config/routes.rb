@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Rfq resource:
+  # CREATE
+  get "/rfqs/new", :controller => "rfqs", :action => "new"
+  post "/create_rfq", :controller => "rfqs", :action => "create"
+
+  # READ
+  get "/rfqs", :controller => "rfqs", :action => "index"
+  get "/rfqs/:id", :controller => "rfqs", :action => "show"
+
+  # UPDATE
+  get "/rfqs/:id/edit", :controller => "rfqs", :action => "edit"
+  post "/update_rfq/:id", :controller => "rfqs", :action => "update"
+
+  # DELETE
+  get "/delete_rfq/:id", :controller => "rfqs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Selection resource:
   # CREATE
   get "/selections/new", :controller => "selections", :action => "new"

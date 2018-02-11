@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Rfqs
+    <a href="/rfqs/new" class="btn btn-lg btn-success">New Rfq</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Data card</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @rfqs.each do |rfq| %>
+      <tr>
+        <td><%= rfq.user_id %></td>
+        <td><%= rfq.data_card_id %></td>
+        <td>
+          <a href="/rfqs/<%= rfq.id %>" class="btn btn-primary">Show</a>
+          <a href="/rfqs/<%= rfq.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_rfq/<%= rfq.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
