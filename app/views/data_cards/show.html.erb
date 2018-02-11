@@ -12,7 +12,13 @@
       <dd><%= @data_card.file_size %></dd>
 
       <dt>User</dt>
-      <dd><%= @data_card.user_id %></dd>
+      <dd>
+        <% if @data_card.user.present? %>
+          <a href="/users/<%= @data_card.user_id %>">
+            <%= @data_card.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Desription</dt>
       <dd><%= @data_card.desription %></dd>
@@ -21,7 +27,13 @@
       <dd><%= @data_card.subtitle %></dd>
 
       <dt>File layout</dt>
-      <dd><%= @data_card.file_layout_id %></dd>
+      <dd>
+        <% if @data_card.file_layout.present? %>
+          <a href="/file_layouts/<%= @data_card.file_layout_id %>">
+            <%= @data_card.file_layout.file_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Market</dt>
       <dd><%= @data_card.market %></dd>

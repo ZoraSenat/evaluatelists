@@ -16,8 +16,20 @@
 
       <% @channel_associations.each do |channel_association| %>
       <tr>
-        <td><%= channel_association.data_card.title %></td>
-        <td><%= channel_association.channel.name %></td>
+        <td>
+          <% if channel_association.data_card.present? %>
+            <a href="/data_cards/<%= channel_association.data_card.id %>">
+              <%= channel_association.data_card.title %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if channel_association.channel.present? %>
+            <a href="/channels/<%= channel_association.channel.id %>">
+              <%= channel_association.channel.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/channel_associations/<%= channel_association.id %>" class="btn btn-primary">Show</a>
           <a href="/channel_associations/<%= channel_association.id %>/edit" class="btn btn-warning">Edit</a>

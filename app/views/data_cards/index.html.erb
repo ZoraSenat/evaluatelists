@@ -27,10 +27,22 @@
       <tr>
         <td><%= data_card.title %></td>
         <td><%= data_card.file_size %></td>
-        <td><%= data_card.user.email %></td>
+        <td>
+          <% if data_card.user.present? %>
+            <a href="/users/<%= data_card.user.id %>">
+              <%= data_card.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= data_card.desription %></td>
         <td><%= data_card.subtitle %></td>
-        <td><%= data_card.file_layout.file_name %></td>
+        <td>
+          <% if data_card.file_layout.present? %>
+            <a href="/file_layouts/<%= data_card.file_layout.id %>">
+              <%= data_card.file_layout.file_name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= data_card.market %></td>
         <td><%= data_card.file_type %></td>
         <td><img src='<%= data_card.image %>' class='img-responsive'></td>

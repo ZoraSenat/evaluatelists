@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Data card</dt>
-      <dd><%= @comment.data_card_id %></dd>
+      <dd>
+        <% if @comment.data_card.present? %>
+          <a href="/data_cards/<%= @comment.data_card_id %>">
+            <%= @comment.data_card.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User</dt>
-      <dd><%= @comment.user_id %></dd>
+      <dd>
+        <% if @comment.user.present? %>
+          <a href="/users/<%= @comment.user_id %>">
+            <%= @comment.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Title</dt>
       <dd><%= @comment.title %></dd>

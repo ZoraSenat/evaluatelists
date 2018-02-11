@@ -16,8 +16,20 @@
 
       <% @selections.each do |selection| %>
       <tr>
-        <td><%= selection.select.name %></td>
-        <td><%= selection.data_card.title %></td>
+        <td>
+          <% if selection.select.present? %>
+            <a href="/selects/<%= selection.select.id %>">
+              <%= selection.select.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if selection.data_card.present? %>
+            <a href="/data_cards/<%= selection.data_card.id %>">
+              <%= selection.data_card.title %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/selections/<%= selection.id %>" class="btn btn-primary">Show</a>
           <a href="/selections/<%= selection.id %>/edit" class="btn btn-warning">Edit</a>
