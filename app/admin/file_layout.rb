@@ -1,5 +1,7 @@
 ActiveAdmin.register FileLayout do
 
+ permit_params :file_name, :file_path
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
