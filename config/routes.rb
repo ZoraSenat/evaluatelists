@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Selection resource:
+  # CREATE
+  get "/selections/new", :controller => "selections", :action => "new"
+  post "/create_selection", :controller => "selections", :action => "create"
+
+  # READ
+  get "/selections", :controller => "selections", :action => "index"
+  get "/selections/:id", :controller => "selections", :action => "show"
+
+  # UPDATE
+  get "/selections/:id/edit", :controller => "selections", :action => "edit"
+  post "/update_selection/:id", :controller => "selections", :action => "update"
+
+  # DELETE
+  get "/delete_selection/:id", :controller => "selections", :action => "destroy"
+  #------------------------------
+
   # Routes for the Select resource:
   # CREATE
   get "/selects/new", :controller => "selects", :action => "new"

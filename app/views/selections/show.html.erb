@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Selection #<%= @selection.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Select</dt>
+      <dd><%= @selection.select_id %></dd>
+
+      <dt>Data card</dt>
+      <dd><%= @selection.data_card_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/selections" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/selections/<%= @selection.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_selection/<%= @selection.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
