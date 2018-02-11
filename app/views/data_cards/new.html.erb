@@ -1,0 +1,127 @@
+<!-- Validation failure messages -->
+<% if @data_card.errors.any? %>
+  <% @data_card.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Data Card</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_data_card" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @data_card.title %>">
+      </div>
+
+      <!-- Label and input for file_size -->
+      <div class="form-group">
+        <label for="file_size" class="control-label">
+          File size
+        </label>
+
+        <input type="text" id="file_size" name="file_size" placeholder="File size" class="form-control" value="<%= @data_card.file_size %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @data_card.user_id %>">
+      </div>
+
+      <!-- Label and input for desription -->
+      <div class="form-group">
+        <label for="desription" class="control-label">
+          Desription
+        </label>
+
+        <textarea id="desription" name="desription" placeholder="Desription" class="form-control" rows="3"><%= @data_card.desription %></textarea>
+      </div>
+
+      <!-- Label and input for subtitle -->
+      <div class="form-group">
+        <label for="subtitle" class="control-label">
+          Subtitle
+        </label>
+
+        <input type="text" id="subtitle" name="subtitle" placeholder="Subtitle" class="form-control" value="<%= @data_card.subtitle %>">
+      </div>
+
+      <!-- Label and input for file_layout_id -->
+      <div class="form-group">
+        <label for="file_layout_id" class="control-label">
+          File layout
+        </label>
+
+        <input type="text" id="file_layout_id" name="file_layout_id" placeholder="File layout" class="form-control" value="<%= @data_card.file_layout_id %>">
+      </div>
+
+      <!-- Label and input for market -->
+      <div class="form-group">
+        <label for="market" class="control-label">
+          Market
+        </label>
+
+        <input type="text" id="market" name="market" placeholder="Market" class="form-control" value="<%= @data_card.market %>">
+      </div>
+
+      <!-- Label and input for file_type -->
+      <div class="form-group">
+        <label for="file_type" class="control-label">
+          File type
+        </label>
+
+        <input type="text" id="file_type" name="file_type" placeholder="File type" class="form-control" value="<%= @data_card.file_type %>">
+      </div>
+
+      <!-- Label and input for image -->
+      <div class="form-group">
+        <label for="image" class="control-label">
+          Image
+        </label>
+
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @data_card.image %>">
+      </div>
+
+      <!-- Label and input for sample_download -->
+      <div class="form-group">
+        <label for="sample_download" class="control-label">
+          Sample download
+        </label>
+
+        <input type="text" id="sample_download" name="sample_download" placeholder="Sample download" class="form-control" value="<%= @data_card.sample_download %>">
+      </div>
+
+      <!-- Label and input for source -->
+      <div class="form-group">
+        <label for="source" class="control-label">
+          Source
+        </label>
+
+        <input type="text" id="source" name="source" placeholder="Source" class="form-control" value="<%= @data_card.source %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Data Card
+      </button>
+      or
+      <a href="/data_cards">Cancel</a>
+    </form>
+  </div>
+</div>

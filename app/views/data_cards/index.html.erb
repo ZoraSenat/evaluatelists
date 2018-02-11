@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>
+    Data cards
+    <a href="/data_cards/new" class="btn btn-lg btn-success">New Data card</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Title</th>
+        <th>File size</th>
+        <th>User</th>
+        <th>Desription</th>
+        <th>Subtitle</th>
+        <th>File layout</th>
+        <th>Market</th>
+        <th>File type</th>
+        <th>Image</th>
+        <th>Sample download</th>
+        <th>Source</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @data_cards.each do |data_card| %>
+      <tr>
+        <td><%= data_card.title %></td>
+        <td><%= data_card.file_size %></td>
+        <td><%= data_card.user_id %></td>
+        <td><%= data_card.desription %></td>
+        <td><%= data_card.subtitle %></td>
+        <td><%= data_card.file_layout_id %></td>
+        <td><%= data_card.market %></td>
+        <td><%= data_card.file_type %></td>
+        <td><%= data_card.image %></td>
+        <td><%= data_card.sample_download %></td>
+        <td><%= data_card.source %></td>
+        <td>
+          <a href="/data_cards/<%= data_card.id %>" class="btn btn-primary">Show</a>
+          <a href="/data_cards/<%= data_card.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_data_card/<%= data_card.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
