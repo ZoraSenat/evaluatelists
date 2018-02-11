@@ -24,7 +24,7 @@
           Data card
         </label>
 
-        <input type="text" id="data_card_id" name="data_card_id" placeholder="Data card" class="form-control" value="<%= @channel_association.data_card_id %>">
+        <%= select_tag(:data_card_id, options_from_collection_for_select(DataCard.all, :id, :title, @channel_association.data_card_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for channel_id -->
