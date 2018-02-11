@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :taggings,
+             :through => :data_cards,
+             :source => :taggings
+
   # Validations
 
   # Include default devise modules. Others available are:

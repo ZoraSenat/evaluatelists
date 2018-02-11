@@ -8,6 +8,10 @@ class Tagging < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :user,
+             :through => :data_card,
+             :source => :user
+
   # Validations
 
 end
