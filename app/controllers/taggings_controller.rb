@@ -1,6 +1,7 @@
 class TaggingsController < ApplicationController
   def index
-    @taggings = Tagging.page(params[:page]).per(10)
+    @q = Tagging.ransack(params[:q])
+    @taggings = @q.result(:distinct => true).includes(:data_card, :tag, :user).page(params[:page]).per(10)
 
     render("taggings/index.html.erb")
   end

@@ -10,7 +10,8 @@ class DataCardsController < ApplicationController
   end
 
   def index
-    @data_cards = DataCard.page(params[:page]).per(10)
+    @q = DataCard.ransack(params[:q])
+    @data_cards = @q.result(:distinct => true).includes(:taggings, :comments, :channel_associations, :selections, :user, :file_layout).page(params[:page]).per(10)
 
     render("data_cards/index.html.erb")
   end

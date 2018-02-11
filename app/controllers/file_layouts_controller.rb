@@ -1,6 +1,7 @@
 class FileLayoutsController < ApplicationController
   def index
-    @file_layouts = FileLayout.page(params[:page]).per(10)
+    @q = FileLayout.ransack(params[:q])
+    @file_layouts = @q.result(:distinct => true).includes(:data_cards, :users).page(params[:page]).per(10)
 
     render("file_layouts/index.html.erb")
   end

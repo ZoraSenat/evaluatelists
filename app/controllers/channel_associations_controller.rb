@@ -1,6 +1,7 @@
 class ChannelAssociationsController < ApplicationController
   def index
-    @channel_associations = ChannelAssociation.page(params[:page]).per(10)
+    @q = ChannelAssociation.ransack(params[:q])
+    @channel_associations = @q.result(:distinct => true).includes(:data_card, :channel).page(params[:page]).per(10)
 
     render("channel_associations/index.html.erb")
   end

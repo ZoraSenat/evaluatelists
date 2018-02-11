@@ -10,7 +10,8 @@ class RfqsController < ApplicationController
   end
 
   def index
-    @rfqs = Rfq.page(params[:page]).per(10)
+    @q = Rfq.ransack(params[:q])
+    @rfqs = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("rfqs/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class SelectsController < ApplicationController
   def index
-    @selects = Select.page(params[:page]).per(10)
+    @q = Select.ransack(params[:q])
+    @selects = @q.result(:distinct => true).includes(:selections).page(params[:page]).per(10)
 
     render("selects/index.html.erb")
   end
