@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :file_layouts,
+             :through => :data_cards,
+             :source => :file_layout
+
   has_many   :taggings,
              :through => :data_cards,
              :source => :taggings

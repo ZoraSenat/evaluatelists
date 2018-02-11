@@ -6,6 +6,10 @@ class FileLayout < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :data_cards,
+             :source => :user
+
   # Validations
 
 end
