@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Channel_association resource:
+  # CREATE
+  get "/channel_associations/new", :controller => "channel_associations", :action => "new"
+  post "/create_channel_association", :controller => "channel_associations", :action => "create"
+
+  # READ
+  get "/channel_associations", :controller => "channel_associations", :action => "index"
+  get "/channel_associations/:id", :controller => "channel_associations", :action => "show"
+
+  # UPDATE
+  get "/channel_associations/:id/edit", :controller => "channel_associations", :action => "edit"
+  post "/update_channel_association/:id", :controller => "channel_associations", :action => "update"
+
+  # DELETE
+  get "/delete_channel_association/:id", :controller => "channel_associations", :action => "destroy"
+  #------------------------------
+
   # Routes for the Channel resource:
   # CREATE
   get "/channels/new", :controller => "channels", :action => "new"
