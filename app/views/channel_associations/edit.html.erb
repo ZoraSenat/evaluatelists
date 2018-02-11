@@ -33,7 +33,7 @@
           Channel
         </label>
 
-        <input type="text" id="channel_id" name="channel_id" placeholder="Channel" class="form-control" value="<%= @channel_association.channel_id %>">
+        <%= select_tag(:channel_id, options_from_collection_for_select(Channel.all, :id, :name, @channel_association.channel_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
