@@ -47,8 +47,6 @@ class RfqsController < ApplicationController
 
   def update
     @rfq = Rfq.find(params[:id])
-
-    @rfq.user_id = params[:user_id]
     @rfq.data_card_id = params[:data_card_id]
 
     save_status = @rfq.save
