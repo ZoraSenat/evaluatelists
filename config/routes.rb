@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Channel resource:
+  # CREATE
+  get "/channels/new", :controller => "channels", :action => "new"
+  post "/create_channel", :controller => "channels", :action => "create"
+
+  # READ
+  get "/channels", :controller => "channels", :action => "index"
+  get "/channels/:id", :controller => "channels", :action => "show"
+
+  # UPDATE
+  get "/channels/:id/edit", :controller => "channels", :action => "edit"
+  post "/update_channel/:id", :controller => "channels", :action => "update"
+
+  # DELETE
+  get "/delete_channel/:id", :controller => "channels", :action => "destroy"
+  #------------------------------
+
   # Routes for the Comment resource:
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
