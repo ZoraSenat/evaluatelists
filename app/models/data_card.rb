@@ -1,6 +1,10 @@
 class DataCard < ApplicationRecord
   # Direct associations
 
+  belongs_to :file_layout,
+             :required => false,
+             :counter_cache => true
+
   belongs_to :user,
              :counter_cache => true
 
