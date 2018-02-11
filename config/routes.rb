@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "data_cards#index"
   # Routes for the Rfq resource:
   # CREATE
   get "/rfqs/new", :controller => "rfqs", :action => "new"
