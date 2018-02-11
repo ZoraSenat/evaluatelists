@@ -38,3 +38,158 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many data_cards -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Data Cards
+      </li>
+
+      <% @user.data_cards.each do |data_card| %>
+        <li class="list-group-item">
+          <a href="/data_cards/<%= data_card.id %>">
+            <%= data_card.title %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/data_cards/<%= data_card.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/data_cards/<%= data_card.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_data_card/<%= data_card.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Comments
+      </li>
+
+      <% @user.comments.each do |comment| %>
+        <li class="list-group-item">
+          <a href="/comments/<%= comment.id %>">
+            <%= comment.data_card_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/comments/<%= comment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/comments/<%= comment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_comment/<%= comment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many rfqs -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Rfqs
+      </li>
+
+      <% @user.rfqs.each do |rfq| %>
+        <li class="list-group-item">
+          <a href="/rfqs/<%= rfq.id %>">
+            <%= rfq.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/rfqs/<%= rfq.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/rfqs/<%= rfq.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_rfq/<%= rfq.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many taggings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Taggings
+      </li>
+
+      <% @user.taggings.each do |tagging| %>
+        <li class="list-group-item">
+          <a href="/taggings/<%= tagging.id %>">
+            <%= tagging.tag_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/taggings/<%= tagging.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/taggings/<%= tagging.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_tagging/<%= tagging.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many file_layouts -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        File Layouts
+      </li>
+
+      <% @user.file_layouts.each do |file_layout| %>
+        <li class="list-group-item">
+          <a href="/file_layouts/<%= file_layout.id %>">
+            <%= file_layout.file_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/file_layouts/<%= file_layout.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/file_layouts/<%= file_layout.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_file_layout/<%= file_layout.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
