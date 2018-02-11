@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Select resource:
+  # CREATE
+  get "/selects/new", :controller => "selects", :action => "new"
+  post "/create_select", :controller => "selects", :action => "create"
+
+  # READ
+  get "/selects", :controller => "selects", :action => "index"
+  get "/selects/:id", :controller => "selects", :action => "show"
+
+  # UPDATE
+  get "/selects/:id/edit", :controller => "selects", :action => "edit"
+  post "/update_select/:id", :controller => "selects", :action => "update"
+
+  # DELETE
+  get "/delete_select/:id", :controller => "selects", :action => "destroy"
+  #------------------------------
+
   # Routes for the File_layout resource:
   # CREATE
   get "/file_layouts/new", :controller => "file_layouts", :action => "new"
