@@ -24,7 +24,7 @@
           Select
         </label>
 
-        <input type="text" id="select_id" name="select_id" placeholder="Select" class="form-control" value="<%= @selection.select_id %>">
+        <%= select_tag(:select_id, options_from_collection_for_select(Select.all, :id, :name, @selection.select_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for data_card_id -->
