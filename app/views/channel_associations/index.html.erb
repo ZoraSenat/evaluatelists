@@ -17,7 +17,7 @@
       <% @channel_associations.each do |channel_association| %>
       <tr>
         <td><%= channel_association.data_card.title %></td>
-        <td><%= channel_association.channel_id %></td>
+        <td><%= channel_association.channel.name %></td>
         <td>
           <a href="/channel_associations/<%= channel_association.id %>" class="btn btn-primary">Show</a>
           <a href="/channel_associations/<%= channel_association.id %>/edit" class="btn btn-warning">Edit</a>
