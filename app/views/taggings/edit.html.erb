@@ -33,7 +33,7 @@
           Data card
         </label>
 
-        <input type="text" id="data_card_id" name="data_card_id" placeholder="Data card" class="form-control" value="<%= @tagging.data_card_id %>">
+        <%= select_tag(:data_card_id, options_from_collection_for_select(DataCard.all, :id, :title, @tagging.data_card_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id -->
