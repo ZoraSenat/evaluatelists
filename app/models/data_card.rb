@@ -1,6 +1,9 @@
 class DataCard < ApplicationRecord
   # Direct associations
 
+  has_many   :selections,
+             :dependent => :destroy
+
   has_many   :channel_associations,
              :dependent => :destroy
 
