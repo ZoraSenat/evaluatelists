@@ -69,7 +69,7 @@
           File layout
         </label>
 
-        <input type="text" id="file_layout_id" name="file_layout_id" placeholder="File layout" class="form-control" value="<%= @data_card.file_layout_id %>">
+        <%= select_tag(:file_layout_id, options_from_collection_for_select(FileLayout.all, :id, :file_name, @data_card.file_layout_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for market -->
