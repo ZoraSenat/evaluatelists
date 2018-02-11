@@ -16,7 +16,7 @@
 
       <% @rfqs.each do |rfq| %>
       <tr>
-        <td><%= rfq.user_id %></td>
+        <td><%= rfq.user.email %></td>
         <td><%= rfq.data_card_id %></td>
         <td>
           <a href="/rfqs/<%= rfq.id %>" class="btn btn-primary">Show</a>
