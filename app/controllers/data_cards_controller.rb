@@ -1,4 +1,14 @@
 class DataCardsController < ApplicationController
+  before_action :current_user_must_be_data_card_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_data_card_user
+    data_card = DataCard.find(params[:id])
+
+    unless current_user == data_card.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @data_cards = DataCard.all
 

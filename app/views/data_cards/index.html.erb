@@ -38,8 +38,11 @@
         <td><%= data_card.source %></td>
         <td>
           <a href="/data_cards/<%= data_card.id %>" class="btn btn-primary">Show</a>
-          <a href="/data_cards/<%= data_card.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_data_card/<%= data_card.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == data_card.user %>
+            <a href="/data_cards/<%= data_card.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_data_card/<%= data_card.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
