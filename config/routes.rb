@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the File_layout resource:
+  # CREATE
+  get "/file_layouts/new", :controller => "file_layouts", :action => "new"
+  post "/create_file_layout", :controller => "file_layouts", :action => "create"
+
+  # READ
+  get "/file_layouts", :controller => "file_layouts", :action => "index"
+  get "/file_layouts/:id", :controller => "file_layouts", :action => "show"
+
+  # UPDATE
+  get "/file_layouts/:id/edit", :controller => "file_layouts", :action => "edit"
+  post "/update_file_layout/:id", :controller => "file_layouts", :action => "update"
+
+  # DELETE
+  get "/delete_file_layout/:id", :controller => "file_layouts", :action => "destroy"
+  #------------------------------
+
   # Routes for the Channel_association resource:
   # CREATE
   get "/channel_associations/new", :controller => "channel_associations", :action => "new"

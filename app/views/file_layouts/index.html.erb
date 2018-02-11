@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    File layouts
+    <a href="/file_layouts/new" class="btn btn-lg btn-success">New File layout</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>File name</th>
+        <th>File path</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @file_layouts.each do |file_layout| %>
+      <tr>
+        <td><%= file_layout.file_name %></td>
+        <td><%= file_layout.file_path %></td>
+        <td>
+          <a href="/file_layouts/<%= file_layout.id %>" class="btn btn-primary">Show</a>
+          <a href="/file_layouts/<%= file_layout.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_file_layout/<%= file_layout.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

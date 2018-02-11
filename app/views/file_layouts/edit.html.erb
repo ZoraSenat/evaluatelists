@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @file_layout.errors.any? %>
+  <% @file_layout.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit File Layout #<%= @file_layout.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_file_layout/<%= @file_layout.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for file_name -->
+      <div class="form-group">
+        <label for="file_name" class="control-label">
+          File name
+        </label>
+
+        <input type="text" id="file_name" name="file_name" placeholder="File name" class="form-control" value="<%= @file_layout.file_name %>">
+      </div>
+
+      <!-- Label and input for file_path -->
+      <div class="form-group">
+        <label for="file_path" class="control-label">
+          File path
+        </label>
+
+        <input type="text" id="file_path" name="file_path" placeholder="File path" class="form-control" value="<%= @file_layout.file_path %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update File Layout
+      </button>
+      or
+      <a href="/file_layouts/<%= @file_layout.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
