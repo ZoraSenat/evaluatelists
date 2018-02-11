@@ -1,6 +1,6 @@
 class ChannelsController < ApplicationController
   def index
-    @channels = Channel.all
+    @channels = Channel.page(params[:page]).per(10)
 
     render("channels/index.html.erb")
   end

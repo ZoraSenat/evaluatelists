@@ -1,6 +1,6 @@
 class SelectsController < ApplicationController
   def index
-    @selects = Select.all
+    @selects = Select.page(params[:page]).per(10)
 
     render("selects/index.html.erb")
   end

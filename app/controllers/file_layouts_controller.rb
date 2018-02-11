@@ -1,6 +1,6 @@
 class FileLayoutsController < ApplicationController
   def index
-    @file_layouts = FileLayout.all
+    @file_layouts = FileLayout.page(params[:page]).per(10)
 
     render("file_layouts/index.html.erb")
   end

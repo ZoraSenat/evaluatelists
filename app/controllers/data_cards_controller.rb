@@ -10,7 +10,7 @@ class DataCardsController < ApplicationController
   end
 
   def index
-    @data_cards = DataCard.all
+    @data_cards = DataCard.page(params[:page]).per(10)
 
     render("data_cards/index.html.erb")
   end

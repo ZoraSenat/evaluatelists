@@ -10,7 +10,7 @@ class RfqsController < ApplicationController
   end
 
   def index
-    @rfqs = Rfq.all
+    @rfqs = Rfq.page(params[:page]).per(10)
 
     render("rfqs/index.html.erb")
   end
